@@ -45,41 +45,55 @@
         <p class="lead">The official hockey team of UBS Zurich</p>
     </div>
 </header>
+<main class="container py-5">
+    <div class="text-center mb-4">
+        <h1>Willkommen beim Eishockeyclub UBS Zürich</h1>
+        <img
+                src="assets/images/hockey-helmet.jpg"
+                alt="Eishockey Helm"
+                class="img-fluid rounded mx-auto d-block my-4"
+                style="max-width: 300px;"
+        />
+    </div>
 
-<!-- Contact Form Section -->
-<section class="py-5">
-    <div class="container">
-        <h2>Join Us - Contact Form</h2>
-        <p>If you want to join the team, fill in the form below!</p>
+    <p>
+        Wir lieben Eishockey! Wir sind sport- und eishockeybegeisterte UBS Mitarbeiter oder z.T. ehemalige UBS Mitarbeiter und spielen in der Region Zürich gegen andere Firmen- oder Plauschmannschaften. Kamerad- und Freundschaft, Witz, Ehrgeiz und natürlich die Kufen über das frisch geputzte Eis gleiten zu spüren, ist der Grund, wieso wir hier alle mitmachen.
+    </p>
 
+    <h2 class="mt-5 mb-3 fw-bold">
+        Willst Du auch Teil unsere Teams sein?<br />
+        Dann melde Dich! Wir freuen uns auf Dich!
+    </h2>
+
+    <!-- Contact Form Section -->
+    <section class="py-4">
+        <h3>Join Us - Kontaktformular</h3>
         <form id="contactForm" novalidate>
             <div class="mb-3">
-                <label for="name" class="form-label">Full Name *</label>
-                <input type="text" class="form-control" id="name" placeholder="Your full name" required />
-                <div class="invalid-feedback">Please enter your name.</div>
+                <label for="name" class="form-label">Name *</label>
+                <input type="text" class="form-control" id="name" placeholder="Ihr Name" required />
+                <div class="invalid-feedback">Bitte geben Sie Ihren Namen ein.</div>
             </div>
 
             <div class="mb-3">
-                <label for="email" class="form-label">Email address *</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com" required />
-                <div class="invalid-feedback">Please enter a valid email address.</div>
+                <label for="email" class="form-label">E-Mail Adresse *</label>
+                <input type="email" class="form-control" id="email" placeholder="name@beispiel.com" required />
+                <div class="invalid-feedback">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div>
             </div>
 
             <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="3" placeholder="Tell us a bit about yourself"></textarea>
+                <label for="message" class="form-label">Nachricht</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Ihre Nachricht"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-ubs-red">Send</button>
+            <button type="submit" class="btn btn-ubs-red">Absenden</button>
         </form>
-    </div>
-</section>
+    </section>
+</main>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-3">
-    &copy; 2025 EHC UBS Zurich. All rights reserved.
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    &copy; 2025 EHC UBS Zurich. Alle Rechte vorbehalten.
 </footer>
-
 <!-- Bootstrap JS Bundle (includes Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Custom JS -->
