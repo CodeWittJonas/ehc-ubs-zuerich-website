@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kontakt - EHC UBS Zurich</title>
+    <title>Kontakt - EHC UBS Zürich</title>
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-ubs-red">
     <div class="container">
@@ -27,132 +30,95 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">Über uns</a></li>
+
                 <li class="nav-item"><a class="nav-link active" href="contact.html">Kontakt</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<main class="container py-5">
-    <h1 class="mb-4">Kontakt</h1>
+<!-- Hero Banner -->
+<section class="hero-banner d-flex flex-column justify-content-center align-items-center text-center text-white">
+    <h1 class="display-4 fw-bold">Kontakt</h1>
+</section>
 
-    <!-- Vorstand Section -->
-    <section class="mb-5">
-        <h2 class="mb-3">Vorstand</h2>
+<!-- Content & Form Section -->
+<main class="container flex-grow-1 py-5">
+    <div class="text-center mb-5">
+        <p class="lead mb-3">
+            Wir suchen laufend neue Teammitglieder, die unsere Leidenschaft für Eishockey teilen!
+        </p>
+        <p>
+            Du bist UBS-Mitarbeiter:in oder Angehörige:r eines UBS-Mitarbeitenden?<br />
+            Du hast bereits Eishockeyerfahrung – vielleicht sogar früher aktiv gespielt?
+        </p>
+        <p>
+            Dann bist du bei uns genau richtig.<br />
+            Wir führen keine regulären Trainings durch, daher solltest du dich sicher auf dem Eis bewegen und Spass am unkomplizierten, kameradschaftlichen Spiel haben.
+        </p>
+        <p>
+            Egal ob du erst kürzlich zur UBS gestossen bist oder schon lange dabei bist – wenn du Teil eines engagierten und humorvollen Teams werden möchtest, freuen wir uns auf deine Nachricht.
+        </p>
+        <p>
+            Schreib uns direkt über das Kontaktformular oder per Mail – wir melden uns gerne bei dir.
+        </p>
+    </div>
 
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-                <div class="card p-3 h-100">
-                    <h5>Kevin Garcia</h5>
-                    <p class="mb-1">Präsident</p>
-                    <p class="mb-1">Tel. 044 235 17 92</p>
-                    <p class="mb-0"><a href="mailto:kevin.garcia@ubs.com">kevin.garcia@ubs.com</a></p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card p-3 h-100">
-                    <h5>Volker Kamp</h5>
-                    <p>Kassier</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card p-3 h-100">
-                    <h5>Sandro Lino Hodel</h5>
-                    <p>Sportchef / General Manager</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card p-3 h-100">
-                    <h5>Julia Kamp</h5>
-                    <p>Team Captain</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card p-3 h-100">
-                    <h5>Riccarda</h5>
-                    <p>Event Management</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Informationen Section -->
-    <section>
-        <h2 class="mb-3">Informationen</h2>
-        <div class="table-responsive">
-            <table class="table table-striped align-middle">
-                <tbody>
-                <tr>
-                    <th>Voraussetzungen für die Mitgliedschaft</th>
-                    <td>UBS-Mitarbeiter oder Mitarbeiter einer UBS-Tochtergesellschaft</td>
-                </tr>
-                <tr>
-                    <th>Liga</th>
-                    <td>Wir spielen derzeit in keiner Liga. Aktuell spielen wir gegen andere Firmen- oder Plauschmannschaften</td>
-                </tr>
-                <tr>
-                    <th>Anzahl Spiele</th>
-                    <td>Pro Saison bestreiten wir ca. 20-25 Spiele und nehmen am UBS Hockeyturnier teil. Zudem starten wir die Saison mit einem befreundeten Team mit einem Einspielweekend.</td>
-                </tr>
-                <tr>
-                    <th>UBS Eishockeyturnier</th>
-                    <td>Der Saisonhöhepunkt ist das UBS-Eishockeyturnier Mitte März. An diesem Turnier nehmen ca. 12 UBS-Mannschaften (z.T. auch mit einem Team aus New York) teil und dauert ein ganzes Wochenende.</td>
-                </tr>
-                <tr>
-                    <th>Ausrüstung</th>
-                    <td>Ist Sache jedes Spielers, Leibchen und Stulpen werden vom Club zur Verfügung gestellt.</td>
-                </tr>
-                <tr>
-                    <th>Versicherung</th>
-                    <td>Sache jedes Spielers</td>
-                </tr>
-                <tr>
-                    <th>Mitgliedergebühr</th>
-                    <td>UBS-Mitarbeiter 125.- CHF</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <p class="mt-4"><strong>Anmeldeformular Eishockeyclub:</strong></p>
-
-        <!-- Contact Form -->
-        <form id="contactForm" novalidate netlify>
+    <section class="mx-auto" style="max-width: 480px;">
+        <h2 class="mb-4 text-center">Kontaktformular</h2>
+        <form id="contactForm" netlify>
             <div class="mb-3">
                 <label for="name" class="form-label">Name *</label>
-                <input type="text" class="form-control" id="name" placeholder="Ihr Name" required />
-                <div class="invalid-feedback">Bitte geben Sie Ihren Namen ein.</div>
+                <input type="text" class="form-control" id="name" placeholder="Dein Name" required />
+                <div class="invalid-feedback">Bitte gib Deinen Namen ein.</div>
             </div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">E-Mail Adresse *</label>
                 <input type="email" class="form-control" id="email" placeholder="name@beispiel.com" required />
-                <div class="invalid-feedback">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div>
+                <div class="invalid-feedback">Bitte gib eine gültige E-Mail-Adresse ein.</div>
             </div>
 
             <div class="mb-3">
                 <label for="message" class="form-label">Nachricht</label>
-                <textarea class="form-control" id="message" rows="4" placeholder="Ihre Nachricht"></textarea>
+                <textarea class="form-control" id="message" rows="4" placeholder="Deine Nachricht"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-ubs-red">Absenden</button>
+            <button type="submit" class="btn btn-ubs-red btn-lg w-100">Absenden</button>
         </form>
     </section>
 </main>
 
 <!-- Footer -->
-<footer class="bg-dark text-white text-center py-3 mt-5">
-    &copy; 2025 EHC UBS Zurich. Alle Rechte vorbehalten.
+<footer class="bg-dark text-white text-center py-3 mt-auto">
+    © 2025 EHC UBS Zürich | Kontakt-kontakt@ehcubs.ch
 </footer>
 
 <!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Navbar loader -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+
+                // Highlight active nav-link
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === 'contact.html') {
+                        link.classList.add('active');
+                    }
+                });
+            })
+            .catch(err => console.error('Navbar load failed:', err));
+    });
+</script>
+
+<!-- Form validation script -->
 <script src="js/main.js"></script>
 </body>
 </html>
