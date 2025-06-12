@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EHC UBS Zurich - Home</title>
+    <title>EHC UBS Zurich - Startseite</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-ubs-red">
     <div class="container">
@@ -30,70 +30,56 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">Über uns</a></li>
+
                 <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
             </ul>
         </div>
     </div>
 </nav>
+<!-- Hero Banner -->
+<section class="hero-banner d-flex flex-column justify-content-center align-items-center text-center text-white">
+    <h1 class="display-4 fw-bold">Willkommen beim EHC UBS Zürich</h1>
+    <p class="lead mb-4">Leidenschaft, Teamspirit und Eishockey – seit über 40 Jahren.</p>
+    <a href="contact.html   " class="btn btn-ubs-red btn-lg fw-semibold">Jetzt mitspielen!</a>
+</section>
 
-<!-- Main Intro Section -->
-<header class="bg-light py-5 text-center">
-    <div class="container">
-        <h1>Willkommen beim Eishockeyclub UBS Zürich</h1>
-        <p class="lead">Das offizielle Eishockey Team der UBS Zürich</p>
-        <img
-                src="assets/images/hockey-helmet.jpg"
-                alt="Eishockey Helm"
-                class="img-fluid rounded mx-auto d-block my-4"
-                style="max-width: 300px;"
-        />
-    </div>
-</header>
-<main class="container py-5">
-
-    <p>
-        Wir lieben Eishockey! Wir sind sport- und eishockeybegeisterte UBS Mitarbeiter oder z.T. ehemalige UBS Mitarbeiter und spielen in der Region Zürich gegen andere Firmen- oder Plauschmannschaften. Kamerad- und Freundschaft, Witz, Ehrgeiz und natürlich die Kufen über das frisch geputzte Eis gleiten zu spüren, ist der Grund, wieso wir hier alle mitmachen.
+<!-- Content Section -->
+<main class="container flex-grow-1 py-5 text-center">
+    <h2 class="fw-bold mb-3">🏒 Willkommen</h2>
+    <p class="mb-4 mx-auto" style="max-width: 600px;">
+        Der EHC UBS Zürich ist der Eishockeyclub von UBS-Mitarbeitenden für UBS-Mitarbeitende.
+        Wir zählen rund 25 aktive Spieler:innen und treten in der Saison (Oktober bis März) regelmässig gegen Firmen- und Plauschmannschaften aus der Region Zürich an.
+    </p>
+    <p class="mb-4 mx-auto" style="max-width: 600px;">
+        Unser Heimstadion ist das Heuried, der jährliche Höhepunkt das UBS-Eishockeyturnier.
+    </p>
+    <p class="mb-4 mx-auto" style="max-width: 600px;">
+        Ob auf dem Eis oder beim legendären Sommer-Grillfest – bei uns steht das Miteinander im Vordergrund.
+    </p>
+    <p class="mb-4 mx-auto" style="max-width: 600px;">
+        Du hast Eishockeyerfahrung und Lust mitzumachen?
+        Dann freuen wir uns, von dir zu hören!
     </p>
 
-    <h2 class="mt-5 mb-3 fw-bold">
-        Willst Du auch Teil unsere Teams sein?<br />
-        Dann melde Dich! Wir freuen uns auf Dich!
-    </h2>
+    <h2 class="fw-bold mb-3">Nächstes Spiel</h2>
+    <p id="next-game-info" class="mb-4">Lade nächstes Spiel...</p>
 
-    <!-- Contact Form Section -->
-    <section class="py-4">
-        <h3>Join Us - Kontaktformular</h3>
-        <form name="Contact Form" novalidate netlify>
-            <div class="mb-3">
-                <label for="name" class="form-label">Name *</label>
-                <input type="text" class="form-control" id="name" placeholder="Ihr Name" required />
-                <div class="invalid-feedback">Bitte geben Sie Ihren Namen ein.</div>
-            </div>
-
-            <div class="mb-3">
-                <label for="email" class="form-label">E-Mail Adresse *</label>
-                <input type="email" class="form-control" id="email" placeholder="name@beispiel.com" required />
-                <div class="invalid-feedback">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div>
-            </div>
-
-            <div class="mb-3">
-                <label for="message" class="form-label">Nachricht</label>
-                <textarea class="form-control" id="message" rows="3" placeholder="Ihre Nachricht"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-ubs-red">Absenden</button>
-        </form>
-    </section>
+    <h2 class="fw-bold mb-3">Du willst mitspielen?</h2>
+    <p class="mb-4">
+        Wir freuen uns auf neue Teammitglieder aus der UBS-Familie!
+    </p>
+    <a href="contact.html" class="btn btn-ubs-red btn-lg fw-semibold">Kontakt aufnehmen</a>
 </main>
 
-<footer class="bg-dark text-white text-center py-3 mt-5">
-    &copy; 2025 EHC UBS Zurich. Alle Rechte vorbehalten.
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-auto">
+    © 2025 EHC UBS Zürich | Kontakt-kontakt@ehcubs.ch
 </footer>
-<!-- Bootstrap JS Bundle (includes Popper) -->
+
+<!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Custom JS -->
-<script src="js/main.js"></script>
+
+<script src="js/nextGame.js"></script>
 </body>
 </html>

@@ -1,19 +1,43 @@
-/* UBS Brand Colors */
+/* Existing UBS Brand Colors and font stuff */
 :root {
     --ubs-red: #e60000;
     --ubs-black: #000000;
     --ubs-white: #ffffff;
 }
 
-/* Custom Bootstrap overrides */
-.bg-ubs-red {
-    background-color: var(--ubs-red) !important;
+body, button, input, textarea {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+.navbar {
+    background-color: var(--ubs-red) !important; /* UBS red background */
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: white !important; /* Make links white */
+}
+
+.navbar .nav-link.active {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.navbar .navbar-toggler {
+    border-color: white;
+}
+
+.navbar .navbar-toggler-icon {
+    filter: invert(1); /* make toggler icon white */
+}
+/* Buttons */
 .btn-ubs-red {
     background-color: var(--ubs-red);
     border: none;
     color: var(--ubs-white);
+    transition: background-color 0.3s ease;
 }
 
 .btn-ubs-red:hover,
@@ -22,27 +46,71 @@
     color: var(--ubs-white);
 }
 
-/* UBS Font */
-body, button, input, textarea {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.hero-banner {
+    position: relative;
+    background-image: url('../assets/images/team-photo.jpeg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center calc(50% - 100px);
+    background-repeat: no-repeat;
+    height: 350px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 15px;
+    z-index: 0;
 }
 
-/* Custom styles for the navbar brand */
-.navbar-brand {
-    font-weight: 700;
-    font-size: 1.5rem;
+/* Light gray overlay */
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(44, 44, 44, 0.5); /* light gray with 50% opacity */
+    z-index: 1;
 }
 
-/* Footer */
-footer {
-    font-size: 0.9rem;
+/* Ensure text is above overlay */
+.hero-banner > * {
+    position: relative;
+    z-index: 2;
+}
+/* Footer sticks to bottom if content is short */
+body.d-flex {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Contact form invalid feedback display */
-.was-validated .form-control:invalid, .form-control.is-invalid {
-    border-color: #dc3545;
+main.flex-grow-1 {
+    flex-grow: 1;
 }
 
-.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
-    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+/* Responsive text adjustments */
+@media (max-width: 576px) {
+    .hero-banner {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .hero-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-banner p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+    .hero-banner {
+        background-size: 160%; /* zoom in more on mobile */
+        height: 250px;
+        min-height: 250px;
+        background-position: center calc(50% - 50px); /* keep vertical offset */
+    }
 }
