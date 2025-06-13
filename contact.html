@@ -67,26 +67,45 @@
 
     <section class="mx-auto" style="max-width: 480px;">
         <h2 class="mb-4 text-center">Kontaktformular</h2>
-        <form id="contactForm" netlify>
+        <form id="contactForm" name="contactForm" method="POST" data-netlify="true" netlify>
+            <input type="hidden" name="form-name" value="contactForm" />
             <div class="mb-3">
                 <label for="name" class="form-label">Name *</label>
-                <input type="text" class="form-control" id="name" placeholder="Dein Name" required />
+                <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        placeholder="Dein Name"
+                        required
+                />
                 <div class="invalid-feedback">Bitte gib Deinen Namen ein.</div>
             </div>
-
             <div class="mb-3">
                 <label for="email" class="form-label">E-Mail Adresse *</label>
-                <input type="email" class="form-control" id="email" placeholder="name@beispiel.com" required />
+                <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="name@beispiel.com"
+                        required
+                />
                 <div class="invalid-feedback">Bitte gib eine gültige E-Mail-Adresse ein.</div>
             </div>
-
             <div class="mb-3">
                 <label for="message" class="form-label">Nachricht</label>
-                <textarea class="form-control" id="message" rows="4" placeholder="Deine Nachricht"></textarea>
+                <textarea
+                        class="form-control"
+                        id="message"
+                        name="message"
+                        rows="4"
+                        placeholder="Deine Nachricht"
+                ></textarea>
             </div>
-
             <button type="submit" class="btn btn-ubs-red btn-lg w-100">Absenden</button>
         </form>
+
     </section>
 </main>
 
