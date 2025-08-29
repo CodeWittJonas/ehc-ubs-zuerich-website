@@ -1,34 +1,55 @@
-// Load games.json and update next game info on the page
-document.addEventListener("DOMContentLoaded", () => {
-    fetch('assets/data/games.json')
-        .then(response => response.json())
-        .then(games => {
-            const today = new Date();
-            // Filter upcoming games
-            const upcoming = games
-                .map(game => ({
-                    ...game,
-                    dateObj: new Date(game.date)
-                }))
-                .filter(game => game.dateObj >= today)
-                .sort((a, b) => a.dateObj - b.dateObj);
+(async function () {
+    const DATA_URL = '/assets/data/games-2025-26.json';
+    const info = document.getElementById('next-game-info');
+    if (!info) return;
 
-            const nextGame = upcoming.length > 0 ? upcoming[0] : null;
-            const nextGameElem = document.getElementById('next-game-info');
+    try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        const data = await res.json();
+        const now = new Date();
 
-            if (nextGame && nextGameElem) {
-                // Format date nicely, e.g. "21. Juni 2025"
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                const formattedDate = nextGame.dateObj.toLocaleDateString('de-CH', options);
+        const upcoming = data.games
+            .map(g => ({ ...g, _date: new Date(g.date) }))
+            .filter(g => g.status !== 'postponed' && g._date >= now)
+            .sort((a, b) => a._date - b._date);
 
-                nextGameElem.innerHTML = `
-          Gegner: ${nextGame.opponent} | Datum: ${formattedDate} | Ort: ${nextGame.location}
-        `;
-            } else if (nextGameElem) {
-                nextGameElem.textContent = "Aktuell sind keine bevorstehenden Spiele geplant.";
-            }
-        })
-        .catch(err => {
-            console.error('Fehler beim Laden der Spiele:', err);
+        if (!upcoming.length) {
+            info.textContent = 'Kein anstehendes Spiel – neue Termine folgen.';
+            return;
+        }
+
+        const g = upcoming[0];
+        const formatted = g._date.toLocaleString('de-CH', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+            hour: '2-digit', minute: '2-digit'
         });
-});
+
+        info.innerHTML = `<strong>${formatted}</strong><br>
+      EHC UBS Zürich ${g.home ? 'vs.' : '@'} ${g.opponent} – ${g.arena}`;
+
+        document.getElementById('next-game-cta')?.classList.remove('d-none');
+
+        // JSON-LD for SEO
+        const ld = {
+            "@context": "https://schema.org",
+            "@type": "SportsEvent",
+            "name": `EHC UBS Zürich ${g.home ? 'vs.' : '@'} ${g.opponent}`,
+            "sport": "IceHockey",
+            "startDate": g.date,
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": { "@type": "Place", "name": g.arena, "address": g.address },
+            "performer": [
+                { "@type": "SportsTeam", "name": "EHC UBS Zürich" },
+                { "@type": "SportsTeam", "name": g.opponent }
+            ],
+            "url": g.url || location.href
+        };
+        const s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.textContent = JSON.stringify(ld);
+        document.head.appendChild(s);
+    } catch (e) {
+        info.textContent = 'Termin folgt';
+    }
+})();

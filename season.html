@@ -1,0 +1,120 @@
+<html lang="de">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Saison 2025/26 – Spielplan & Resultate | EHC UBS Zürich</title>
+    <meta name="description"
+          content="Spielplan und Resultate der Saison 2025/26 des EHC UBS Zürich – inklusive Bilanz, Tore und Gegentore."/>
+    <link rel="canonical" href="https://www.ehcubs.ch/season.html"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="d-flex flex-column min-vh-100">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<!-- Navbar -->
+<nav class="navbar navbar-modern navbar-expand-lg navbar-dark bg-ubs-red shadow-sm sticky-top" aria-label="Hauptnavigation">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">EHC UBS Zürich</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">Über uns</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
+                <li class="nav-item"><a class="nav-link active" href="season.html">Saison</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Hero -->
+<header class="season-hero text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-5 fw-bold mb-2">Saison 2025/26</h1>
+        <p class="lead mb-0">Spielplan & Resultate</p>
+    </div>
+</header>
+
+<main id="main" class="container flex-grow-1 py-5">
+    <!-- Stats summary -->
+    <section class="mb-4">
+        <div class="row g-3 text-center justify-content-center" id="season-stats">
+            <div class="col-6 col-md-3">
+                <div class="stat-card p-3">
+                    <div class="label">Bilanz</div>
+                    <div class="value" id="stat-record">0–0–0</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card p-3">
+                    <div class="label">Spiele</div>
+                    <div class="value" id="stat-games">0</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card p-3">
+                    <div class="label">Tore</div>
+                    <div class="value" id="stat-gf">0</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card p-3">
+                    <div class="label">Gegentore</div>
+                    <div class="value" id="stat-ga">0</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule table -->
+    <section>
+        <div class="d-flex align-items-center mb-3 gap-2">
+            <h2 class="section-title mb-0"><span>Spielplan</span></h2>
+            <span class="badge bg-secondary" id="season-name">Saison</span>
+            <div class="ms-auto small text-muted" id="last-updated"></div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-borderless align-middle table-schedule">
+                <thead class="table-light sticky-top">
+                <tr>
+                    <th scope="col">Datum</th>
+                    <th scope="col">Zeit</th>
+                    <th scope="col">Heim</th>
+                    <th scope="col">Auswärts</th>
+                    <th scope="col">Ort</th>
+                    <th scope="col" class="d-none d-md-table-cell">Typ</th>
+                    <th scope="col" class="text-end">Resultat</th>
+                </tr>
+                </thead>
+                <tbody id="games-body">
+                <tr>
+                    <td colspan="7" class="text-center py-5 text-muted">Lade Spielplan …</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="text-center mt-4">
+        <a href="contact.html" class="btn btn-ubs-red btn-lg"><i class="bi bi-person-plus"></i> Mitspielen?</a>
+    </div>
+</main>
+
+<footer class="bg-dark text-white text-center py-4 mt-auto small">
+    © <span id="year">2025</span> EHC UBS Zürich ·
+    <a class="text-white text-decoration-underline" href="mailto:kontakt@ehcubs.ch">kontakt@ehcubs.ch</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="js/season.js" defer></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

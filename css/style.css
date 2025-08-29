@@ -1,9 +1,12 @@
-/* Existing UBS Brand Colors and font stuff */
+/* ===== Base / Tokens ===== */
 :root {
     --ubs-red: #e60000;
     --ubs-black: #000000;
     --ubs-white: #ffffff;
+    --ice: #e9f4ff;
 }
+
+html { scroll-behavior: smooth; }
 
 body, button, input, textarea {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -11,106 +14,130 @@ body, button, input, textarea {
     padding: 0;
 }
 
-.navbar {
-    background-color: var(--ubs-red) !important; /* UBS red background */
+/* Accessibility */
+.skip-link {
+    position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus {
+    position: static; width: auto; height: auto; padding: .5rem 1rem; background: #000; color: #fff;
 }
 
-.navbar .nav-link,
-.navbar .navbar-brand {
-    color: white !important; /* Make links white */
+/* ===== Navbar (modern) ===== */
+.navbar-modern {
+    background: linear-gradient(90deg, #e60000 0%, #c40000 100%) !important;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 6px 20px rgba(0,0,0,.12);
+    backdrop-filter: saturate(130%) blur(8px);
+    -webkit-backdrop-filter: saturate(130%) blur(8px);
+    transition: padding .2s ease, background-color .2s ease, box-shadow .2s ease;
 }
+.navbar-modern .navbar-brand {
+    font-weight: 800; letter-spacing: .02em; position: relative;
+}
+.navbar-modern .navbar-brand::after {
+    content: ""; position: absolute; left: 0; bottom: -6px; width: 28px; height: 3px;
+    background: rgba(255,255,255,.9); border-radius: 2px; transition: width .2s, opacity .2s; opacity: .8;
+}
+.navbar-modern .navbar-brand:hover::after { width: 42px; opacity: 1; }
+.navbar-modern .nav-link {
+    padding: .5rem .9rem; border-radius: 999px; transition: background-color .15s ease, transform .15s ease;
+}
+.navbar-modern .nav-link:hover { background: rgba(255,255,255,.12); transform: translateY(-1px); }
+.navbar-modern .nav-link.active { background: #fff; color: #000 !important; box-shadow: 0 2px 10px rgba(0,0,0,.12); }
+.navbar-modern .navbar-toggler { border-width: 2px; }
+.navbar-modern .navbar-toggler:focus { box-shadow: 0 0 0 .2rem rgba(255,255,255,.35); }
 
-.navbar .nav-link.active {
-    font-weight: 700;
-    text-decoration: underline;
-}
+/* Compact on scroll */
+.navbar-modern.nav-compact { padding-top: .15rem; padding-bottom: .15rem; box-shadow: 0 4px 16px rgba(0,0,0,.14); }
+.navbar-modern.nav-compact .navbar-brand { font-size: 1rem; }
 
-.navbar .navbar-toggler {
-    border-color: white;
-}
-
-.navbar .navbar-toggler-icon {
-    filter: invert(1); /* make toggler icon white */
-}
-/* Buttons */
+/* ===== Buttons ===== */
 .btn-ubs-red {
-    background-color: var(--ubs-red);
-    border: none;
-    color: var(--ubs-white);
-    transition: background-color 0.3s ease;
+    background-color: var(--ubs-red); border: none; color: var(--ubs-white);
+    transition: transform .15s ease, background-color .3s ease;
 }
+.btn-ubs-red:hover, .btn-ubs-red:focus { background-color: #b30000; color: var(--ubs-white); transform: translateY(-1px); }
+.btn-outline-light { border-width: 2px; }
 
-.btn-ubs-red:hover,
-.btn-ubs-red:focus {
-    background-color: #b30000;
-    color: var(--ubs-white);
-}
-
+/* ===== Hero (homepage) ===== */
 .hero-banner {
-    position: relative;
-    background-image: url('../assets/images/team-photo.jpeg'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center calc(50% - 100px);
-    background-repeat: no-repeat;
-    height: 350px;
-    min-height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 0 15px;
-    z-index: 0;
+    position: relative; background-image: url('../assets/images/team-photo.jpeg'); background-size: cover;
+    background-position: center calc(50% - 100px); background-repeat: no-repeat;
+    height: 380px; min-height: 350px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; color: white; padding: 0 15px; z-index: 0;
 }
-
-/* Light gray overlay */
 .hero-banner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(44, 44, 44, 0.5); /* light gray with 50% opacity */
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 60%, rgba(0,0,0,.55) 100%);
     z-index: 1;
 }
+.hero-banner > * { position: relative; z-index: 2; }
+.badge.bg-ice { background-color: var(--ice); color: #084298; }
+.tracking { letter-spacing: .08em; }
+.drop-shadow { text-shadow: 0 2px 8px rgba(0,0,0,.45); }
 
-/* Ensure text is above overlay */
-.hero-banner > * {
-    position: relative;
-    z-index: 2;
+/* ===== Sections / Cards ===== */
+.section-title {
+    font-weight: 800; text-transform: none; letter-spacing: .02em; margin-bottom: 1rem;
 }
-/* Footer sticks to bottom if content is short */
-body.d-flex {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+.section-title span { display: inline-block; padding-bottom: .25rem; border-bottom: 4px solid var(--ubs-red); }
 
-main.flex-grow-1 {
-    flex-grow: 1;
+.feature-card, .value-card, .stat-card, .shadow-xl {
+    background: #fff; border-radius: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,.08);
 }
+.value-card:hover, .feature-card:hover, .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,.12); }
+.shadow-xl { box-shadow: 0 20px 50px rgba(0,0,0,.12) !important; }
 
-/* Responsive text adjustments */
+.hover-lift { transition: transform .2s ease, box-shadow .2s ease; }
+
+.text-ubs-red { color: var(--ubs-red); }
+.bg-ice { background: var(--ice); }
+
+/* ===== Layout ===== */
+body.d-flex { min-height: 100vh; display: flex; flex-direction: column; }
+main.flex-grow-1 { flex-grow: 1; }
+
+/* ===== Responsive ===== */
 @media (max-width: 576px) {
-    .hero-banner {
-        height: 250px;
-        min-height: 250px;
-    }
-
-    .hero-banner h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-banner p {
-        font-size: 1rem;
-    }
+    .hero-banner { background-size: 160%; height: 280px; min-height: 250px; background-position: center calc(50% - 50px); }
+    .hero-banner h1 { font-size: 1.8rem; }
+    .hero-banner p { font-size: 1rem; }
 }
 
-/* Mobile adjustments */
-@media (max-width: 576px) {
-    .hero-banner {
-        background-size: 160%; /* zoom in more on mobile */
-        height: 250px;
-        min-height: 250px;
-        background-position: center calc(50% - 50px); /* keep vertical offset */
-    }
+/* Images */
+img { max-width: 100%; height: auto; }
+
+/* ===== Page-specific heroes ===== */
+.about-hero {
+    background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.6)), url('../assets/images/team-photo.jpeg');
+    background-size: cover; background-position: center 30%; border-bottom: 4px solid var(--ubs-red);
+}
+.contact-hero {
+    background: linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,.6)), url('../assets/images/team-photo.jpeg');
+    background-size: cover; background-position: center; border-bottom: 4px solid var(--ubs-red);
+}
+.contact-hero h1, .contact-hero p { text-shadow: 0 2px 6px rgba(0,0,0,.6); }
+.info-card { border-radius: 1rem; }
+
+.season-hero {
+    background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.6)), url('../assets/images/team-photo.jpeg');
+    background-size: cover; background-position: center; border-bottom: 4px solid var(--ubs-red);
+}
+
+/* About stats */
+.stat-badge {
+    background:#fff; border-radius: 999px; padding: .9rem 1rem; display:flex; flex-direction:column; align-items:center;
+    box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+.stat-badge .stat { font-weight:800; font-size:1.125rem; line-height:1; }
+.stat-badge .label { font-size:.85rem; opacity:.85; }
+
+/* Season stats */
+.stat-card .label { font-size:.85rem; opacity:.75; }
+.stat-card .value { font-size:1.35rem; font-weight:800; }
+.result-badge { vertical-align: middle; margin-left: .35rem; }
+
+/* Schedule table header (sticky, top of container) */
+.table-responsive .table-schedule thead th {
+    position: sticky; top: 0; z-index: 3; background-color: #f8f9fa;
 }
