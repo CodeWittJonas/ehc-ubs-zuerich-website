@@ -54,7 +54,6 @@
           <td>${homeTeam}</td>
           <td>${awayTeam}</td>
           <td>${g.arena || ''}</td>
-          <td class="d-none d-md-table-cell">${g.competition || ''}</td>
           <td class="text-end">${resultHTML}</td>
         `;
                 tbody.appendChild(tr);
