@@ -14,7 +14,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 1, "them": 16 },
       "url": ""
     },
     {
