@@ -30,7 +30,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link rel="preload" href="assets/images/team-photo.jpeg" as="image" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
+
 </head>
 <body class="d-flex flex-column min-vh-100">
 <!-- Skip link for accessibility -->
@@ -107,16 +110,33 @@
     </section>
 
     <section class="mb-4">
-        <h2 class="section-title"><span>Du willst mitspielen?</span></h2>
-        <p class="mb-4">Wir freuen uns auf neue Teammitglieder aus der UBS‑Familie!</p>
-        <a href="contact.html" class="btn btn-ubs-red btn-lg fw-semibold">Kontakt aufnehmen</a>
+        <h2 class="fw-bold mb-3">Du willst mitspielen?</h2>
+        <p class="mb-4">
+            Wir freuen uns auf neue Teammitglieder aus der UBS-Familie!
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+            <a href="contact.html" class="btn btn-ubs-red btn-lg fw-semibold">
+                Kontakt aufnehmen
+            </a>
+            <a href="https://www.instagram.com/ehc_ubs_zuerich/" target="_blank" rel="noopener"
+               class="btn btn-outline-dark btn-lg d-inline-flex align-items-center">
+                <i class="bi bi-instagram me-2" aria-hidden="true"></i>
+                Instagram
+            </a>
+        </div>
     </section>
 </main>
 
 <!-- Footer -->
-<footer class="bg-dark text-white text-center py-4 mt-auto small">
-    © <span id="year">2025</span> EHC UBS Zürich ·
-    <a class="text-white text-decoration-underline" href="mailto:kevin.garcia0590@gmail.com">kevin.garcia0590@gmail.com</a>
+<footer class="bg-dark text-white text-center py-3 mt-auto">
+    © 2025 EHC UBS Zürich ·
+    <a href="mailto:kontakt@ehcubs.ch" class="text-white text-decoration-underline">
+        info@ehc-ubs-zuerich.ch
+    </a>
+    <a href="https://www.instagram.com/ehc_ubs_zuerich" target="_blank" rel="noopener"
+       class="text-white ms-3 d-inline-flex align-items-center">
+        <i class="bi bi-instagram" aria-label="Instagram"></i>
+    </a>
 </footer>
 
 <!-- Schema.org (SportsTeam); Next game is injected dynamically as SportsEvent in nextGame.js -->
