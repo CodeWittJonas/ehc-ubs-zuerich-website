@@ -1,11 +1,27 @@
 (async function () {
-    const DATA_URL = '/assets/data/games-2025-26.json';
+    const CANDIDATES = [
+        'assets/data/games-2025-26.json',
+        '/assets/data/games-2025-26.json'
+    ];
     const info = document.getElementById('next-game-info');
     if (!info) return;
 
     try {
-        const res = await fetch(DATA_URL, { cache: 'no-store' });
-        const data = await res.json();
+        let data = null, lastErr = null;
+        for (const url of CANDIDATES) {
+            try {
+                const res = await fetch(url, { cache: 'no-store' });
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                data = await res.json();
+                break;
+            } catch (e) {
+                lastErr = e;
+            }
+        }
+        if (!data) {
+            console.error('nextGame: konnte JSON nicht laden', lastErr);
+            throw lastErr || new Error('Daten konnten nicht geladen werden');
+        }
         const now = new Date();
 
         const upcoming = data.games
@@ -24,8 +40,14 @@
             hour: '2-digit', minute: '2-digit'
         });
 
-        info.innerHTML = `<strong>${formatted}</strong><br>
-      EHC UBS Zürich ${g.home ? 'vs.' : '@'} ${g.opponent} – ${g.arena}`;
+        const heimBadge = g.home ? '<span class="badge bg-success ms-2">Heim</span>' : '<span class="badge bg-secondary ms-2">Auswärts</span>';
+        const arenaLine = g.arena ? `<div class="text-muted small"><i class="bi bi-geo-alt me-1" aria-hidden="true"></i>${g.arena}</div>` : '';
+
+        info.innerHTML = `
+          <div class="mb-1"><strong>${formatted}</strong></div>
+          <div class="mb-1">EHC UBS Zürich ${g.home ? 'vs.' : '@'} ${g.opponent}${heimBadge}</div>
+          ${arenaLine}
+        `;
 
         document.getElementById('next-game-cta')?.classList.remove('d-none');
 

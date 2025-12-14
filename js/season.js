@@ -1,5 +1,8 @@
 (function () {
-    const DATA_URL = '/assets/data/games-2025-26.json';
+    const CANDIDATES = [
+        'assets/data/games-2025-26.json',
+        '/assets/data/games-2025-26.json'
+    ];
     const TEAM_NAME = 'EHC UBS Zürich';
 
     const tbody = document.getElementById('games-body');
@@ -10,8 +13,22 @@
     const seasonName = document.getElementById('season-name');
     const lastUpdated = document.getElementById('last-updated');
 
-    fetch(DATA_URL, { cache: 'no-store' })
-        .then(r => r.json())
+    (async () => {
+        let data = null, lastErr = null;
+        for (const url of CANDIDATES) {
+            try {
+                const r = await fetch(url, { cache: 'no-store' });
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                data = await r.json();
+                break;
+            } catch (e) { lastErr = e; }
+        }
+        if (!data) {
+            console.error('season: konnte JSON nicht laden', lastErr);
+            throw lastErr || new Error('Spielplan konnte nicht geladen werden');
+        }
+        return data;
+    })()
         .then(data => {
             // Header badges
             if (data.season) seasonName.textContent = `Saison ${data.season}`;

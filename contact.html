@@ -10,12 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Favicons (place files in /assets/favicons/) -->
-    <link rel="icon" href="/assets/favicons/favicon-128x128.png" sizes="any">
-    <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon-iphone-60x60.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-touch-icon-ipad-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/apple-touch-icon-iphone-retina-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/apple-touch-icon-ipad-retina-152x152.png">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
 </head>
 <body class="d-flex flex-column min-vh-100">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -53,7 +52,11 @@
 <main id="main" class="container flex-grow-1 py-5">
     <div class="row justify-content-center g-5">
         <div class="col-lg-6">
-            <h2 id="kontaktformular" class="section-title text-center mb-4"><span>Kontaktformular</span></h2>
+            <h2 id="kontaktformular" class="section-title text-center mb-3"><span>Interesse melden</span></h2>
+            <p class="text-center mb-4">
+                Du möchtest beim EHC UBS Zürich mitspielen oder zuerst ein Schnupperspiel machen?
+                Füll einfach das Formular aus und wir melden uns innerhalb weniger Tage bei dir.
+            </p>
             <form name="contactForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" class="needs-validation card shadow-xl border-0 p-4 p-md-5 hover-lift" novalidate>
                 <!-- Hinweis: Teilnahme -->
                 <div class="alert alert-warning d-flex align-items-center small mb-3" role="alert">
@@ -75,21 +78,63 @@
                     <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="name@beispiel.com" required />
                     <div class="invalid-feedback">Bitte gib eine gültige E‑Mail‑Adresse ein.</div>
                 </div>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="position" class="form-label">Position</label>
+                        <select id="position" name="position" class="form-select form-select-lg">
+                            <option value="">Bitte auswählen (optional)</option>
+                            <option>Torhüter</option>
+                            <option>Verteidiger</option>
+                            <option>Stürmer</option>
+                        </select>
+                        <div class="form-text">Hilft uns bei der Einteilung.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="experience" class="form-label">Erfahrung (Jahre)</label>
+                        <input type="number" min="0" step="1" id="experience" name="experience" class="form-control form-control-lg" placeholder="z. B. 3" />
+                        <div class="form-text">Ungefähre Anzahl Jahre Eishockey.</div>
+                    </div>
+                </div>
                 <div class="mb-3">
                     <label for="message" class="form-label">Nachricht</label>
-                    <textarea class="form-control form-control-lg" id="message" name="message" rows="4" placeholder="Deine Nachricht (optional)"></textarea>
+                    <textarea class="form-control form-control-lg" id="message" name="message" rows="5" placeholder="Kurz zu dir (optional): Position, Erfahrung, Verfügbarkeit für ein Schnupperspiel …"></textarea>
                 </div>
+                <div class="small text-muted mb-2">Deine Angaben werden nur für die Teamkommunikation des EHC UBS Zürichs verwendet. <a href="faq.html" class="text-decoration-underline">Häufige Fragen (FAQ)</a></div>
                 <button type="submit" class="btn btn-ubs-red btn-lg w-100"><i class="bi bi-send me-1"></i> Absenden</button>
             </form>
         </div>
 
         <div class="col-lg-5">
-            <div class="info-card card shadow-sm border-0 p-4 h-100 bg-ice text-center">
-                <i class="bi bi-envelope-paper-heart fs-1 mb-3 text-ubs-red"></i>
-                <h3 class="h5">Direkt per E‑Mail</h3>
-                <p><a href="mailto:info@ehc-ubs-zuerich.ch" class="fw-semibold">info@ehc-ubs-zuerich.ch</a></p>
+            <div class="info-card card shadow-sm border-0 p-4 h-100 bg-ice">
+                <div class="text-center">
+                    <i class="bi bi-envelope-paper-heart fs-1 mb-3 text-ubs-red" aria-hidden="true"></i>
+                    <h3 class="h5">Direkt per E‑Mail</h3>
+                    <p><a href="mailto:info@ehc-ubs-zuerich.ch" class="fw-semibold">info@ehc-ubs-zuerich.ch</a></p>
+                </div>
                 <hr>
-                <p class="small mb-0"><i class="bi bi-geo-alt me-1"></i> Heimstadion Heuried<br>Döltschiweg 130, 8055 Zürich</p>
+                <h4 class="h6">Anforderungen</h4>
+                <ul class="small mb-3 ps-3">
+                    <li>Teilnahme nur für UBS Mitarbeitende</li>
+                    <li>Spieler wie auch Spielerinnen willkommen</li>
+                    <li>Spass am Hockey haben</li>
+                    <li>Eishockey‑Erfahrung mind. 3 Jahre</li>
+                </ul>
+                <p class="small mb-2"><i class="bi bi-geo-alt me-1" aria-hidden="true"></i> Heimstadion Heuried<br>Döltschiweg 130, 8055 Zürich</p>
+                <div class="ratio ratio-4x3 mb-2">
+                    <iframe
+                        title="Karte: Eissportzentrum Heuried"
+                        aria-label="Karte: Eissportzentrum Heuried"
+                        src="https://www.google.com/maps?q=Eissportzentrum+Heuried,+D%C3%B6ltschiweg+130,+8055+Z%C3%BCrich&hl=de&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        style="border:0;">
+                    </iframe>
+                </div>
+                <p class="small mb-0">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Eissportzentrum+Heuried,+D%C3%B6ltschiweg+130,+8055+Z%C3%BCrich&hl=de" target="_blank" rel="noopener" class="text-decoration-underline">
+                        Auf Google Maps öffnen
+                    </a>
+                </p>
             </div>
         </div>
     </div>
@@ -98,9 +143,7 @@
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-3 mt-auto">
     © 2025 EHC UBS Zürich ·
-    <a href="mailto:kontakt@ehcubs.ch" class="text-white text-decoration-underline">
-        info@ehc-ubs-zuerich.ch
-    </a>
+    <a href="mailto:info@ehc-ubs-zuerich.ch" class="text-white text-decoration-underline">info@ehc-ubs-zuerich.ch</a>
     <a href="https://www.instagram.com/ehc_ubs_zuerich" target="_blank" rel="noopener"
        class="text-white ms-3 d-inline-flex align-items-center">
         <i class="bi bi-instagram" aria-label="Instagram"></i>
@@ -108,6 +151,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="js/nav.js" defer></script>
 <script src="js/main.js" defer></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>

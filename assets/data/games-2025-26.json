@@ -2,7 +2,7 @@
   "season": "2025-26",
   "timezone": "Europe/Zurich",
   "schemaVersion": 1,
-  "lastUpdated": "2025-09-07T00:00:00+02:00",
+  "lastUpdated": "2025-12-14T00:00:00+01:00",
   "games": [
     {
       "id": "2025-09-06-bruegglifeld-aarau-argovia-stars",
@@ -40,7 +40,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 3, "them": 11 },
       "url": ""
     },
     {
@@ -53,7 +53,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 6, "them": 10 },
       "url": ""
     },
     {
@@ -66,7 +66,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 1, "them": 4 },
       "url": ""
     },
     {
@@ -79,7 +79,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 3, "them": 10 },
       "url": ""
     },
     {
@@ -92,7 +92,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 3, "them": 9 },
       "url": ""
     },
     {
@@ -105,7 +105,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 8, "them": 3 },
       "url": ""
     },
     {
@@ -114,11 +114,11 @@
       "end": "2025-11-08T11:00:00+01:00",
       "home": false,
       "opponent": "Dynamo Teachers",
-      "arena": "Hirslen, Bülach",
+      "arena": "Kloten Arena",
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 14, "them": 4 },
       "url": ""
     },
     {
@@ -131,7 +131,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 12, "them": 2 },
       "url": ""
     },
     {
@@ -144,7 +144,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 10, "them": 0 },
       "url": ""
     },
     {
@@ -157,7 +157,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 9, "them": 3 },
       "url": ""
     },
     {
@@ -170,7 +170,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 6, "them": 3 },
       "url": ""
     },
     {
@@ -183,7 +183,7 @@
       "address": "",
       "competition": "Freundschaftsspiel",
       "status": "scheduled",
-      "score": { "us": null, "them": null },
+      "score": { "us": 8, "them": 1 },
       "url": ""
     },
     {

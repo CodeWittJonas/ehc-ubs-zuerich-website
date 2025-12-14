@@ -51,6 +51,13 @@ body, button, input, textarea {
 .navbar-modern.nav-compact { padding-top: .15rem; padding-bottom: .15rem; box-shadow: 0 4px 16px rgba(0,0,0,.14); }
 .navbar-modern.nav-compact .navbar-brand { font-size: 1rem; }
 
+/* Over hero: keep same UBS-red as default (no fade) */
+.navbar-modern.nav-transparent {
+    background: linear-gradient(90deg, #e60000 0%, #c40000 100%) !important;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 6px 20px rgba(0,0,0,.12);
+}
+
 /* ===== Buttons ===== */
 .btn-ubs-red {
     background-color: var(--ubs-red); border: none; color: var(--ubs-white);

@@ -17,21 +17,18 @@
     <meta property="og:image" content="https://www.ehcubs.ch/assets/images/og-hero.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Favicons (place files in /assets/favicons/) -->
-    <link rel="icon" href="/assets/favicons/favicon-128x128.png" sizes="any">
-    <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon-iphone-60x60.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-touch-icon-ipad-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/apple-touch-icon-iphone-retina-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/apple-touch-icon-ipad-retina-152x152.png">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Bootstrap Icons (small, for visual flair) -->
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link rel="preload" href="assets/images/team-photo.jpeg" as="image" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
@@ -74,7 +71,7 @@
     <section class="mb-5">
         <h2 class="section-title"><span>🏒 Willkommen</span></h2>
         <p class="lead mx-auto" style="max-width: 720px;">
-            Der EHC UBS Zürich ist der Eishockeyclub von UBS‑Mitarbeitenden für UBS‑Mitarbeitende. Wir zählen rund 25 aktive Spieler:innen und treten in der Saison (Oktober bis März) regelmässig gegen Firmen‑ und Plauschmannschaften aus der Region Zürich an.
+            Der EHC UBS Zürich ist der Eishockeyclub von UBS‑Mitarbeitenden für UBS‑Mitarbeitende. Wir zählen rund 25 aktive Spieler:innen und treten in der Saison (September bis April) regelmässig gegen Firmen‑ und Plauschmannschaften aus der Region Zürich an.
         </p>
         <div class="row g-4 mt-4">
             <div class="col-12 col-md-4">
@@ -111,9 +108,11 @@
 
     <section class="mb-4">
         <h2 class="fw-bold mb-3">Du willst mitspielen?</h2>
-        <p class="mb-4">
-            Wir freuen uns auf neue Teammitglieder aus der UBS-Familie!
-        </p>
+        <p class="mb-3">Wir freuen uns auf neue Teammitglieder aus der UBS!</p>
+        <div class="alert alert-info" role="note">
+            <i class="bi bi-people me-2" aria-hidden="true"></i>
+            Teilnahme für UBS‑Mitarbeitende. Plauschteam mit Seniorenregeln – Schnupperspiel möglich.
+        </div>
         <div class="d-flex justify-content-center flex-wrap gap-3">
             <a href="contact.html" class="btn btn-ubs-red btn-lg fw-semibold">
                 Kontakt aufnehmen
@@ -130,9 +129,7 @@
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-3 mt-auto">
     © 2025 EHC UBS Zürich ·
-    <a href="mailto:kontakt@ehcubs.ch" class="text-white text-decoration-underline">
-        info@ehc-ubs-zuerich.ch
-    </a>
+    <a href="mailto:info@ehc-ubs-zuerich.ch" class="text-white text-decoration-underline">info@ehc-ubs-zuerich.ch</a>
     <a href="https://www.instagram.com/ehc_ubs_zuerich" target="_blank" rel="noopener"
        class="text-white ms-3 d-inline-flex align-items-center">
         <i class="bi bi-instagram" aria-label="Instagram"></i>
@@ -158,6 +155,7 @@
 
 <!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="js/nav.js" defer></script>
 <script src="js/nextGame.js" defer></script>
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();

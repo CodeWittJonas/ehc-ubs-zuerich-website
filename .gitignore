@@ -1,3 +1,11 @@
 .idea
 
 .DS_Store
+/assets/images/team_optimized
+/assets/images/team/visualartssobotkiewicz_UBS_Hockey__Kevin_Garcia/
+/docs/
+# BMAD (local only)
+.bmad-core/
+.bmad-*/
+.gemini
+.claude
